@@ -18,14 +18,14 @@ After:
 
 ```
 $ eslint .
-* [2018-04-26T11:02:06.176Z] Processed 0 files...
-* [2018-04-26T11:02:21.481Z] Processed 155 files...
-* [2018-04-26T11:02:36.494Z] Processed 350 files...
-* [2018-04-26T11:02:51.500Z] Processed 569 files...
-* [2018-04-26T11:03:06.569Z] Processed 880 files...
-* [2018-04-26T11:03:21.637Z] Processed 1207 files...
-* [2018-04-26T11:03:36.650Z] Processed 1562 files...
-* [2018-04-26T11:03:51.664Z] Processed 1959 files...
+* [ 2018-04-26 11:02:06.176 ] Processed 0 files...
+* [ 2018-04-26 11:02:21.481 ] Processed 155 files...
+* [ 2018-04-26 11:02:36.494 ] Processed 350 files...
+* [ 2018-04-26 11:02:51.500 ] Processed 569 files...
+* [ 2018-04-26 11:03:06.569 ] Processed 880 files...
+* [ 2018-04-26 11:03:21.637 ] Processed 1207 files...
+* [ 2018-04-26 11:03:36.650 ] Processed 1562 files...
+* [ 2018-04-26 11:03:51.664 ] Processed 1959 files...
 
 ESLint Stats Report
 ===================
@@ -59,17 +59,38 @@ $
 ## Usage
 
 ```
-yarn add taskworld/eslint-plugin-progress --dev
+npm add gablau/eslint-plugin-progress --save-dev
 ```
 
-```yml
-# .eslintrc
-plugins:
-  progress
-rules:
-  progress/activate: 1
+```json
+# .eslintrc.json
+{
+    "plugins": [
+        "progress"
+    ],
+    "rules": {
+        "progress/activate": [1, {
+            "printEvery": 15, 
+            "showSlowStats": true,
+            "maxSlowFiles":20,
+            "fullPath": true
+        }]
+    }
+}
 ```
+## Options
+- `printEvery` (seconds) - Print a line every X seconds, 0 = one line for each file 
+- `showSlowStats` (boolean) - Print statistics on "slower" files 
+- `maxSlowFiles` (integer) - Maximum number of files to show in slower file statistics 
+- `fullPath` (boolean) - Show the full path in the slowest file statistics 
+
 
 ## Known issues
+Nothing
 
-It doesn’t keep the stat of the last file processed.
+## Attributions
+
+The **eslint-plugin-progress** was a fork of [**taskworld/eslint-plugin-progress**](https://github.com/taskworld/eslint-plugin-progress) 
+
+## License
+This project is released under The MIT License (MIT)
