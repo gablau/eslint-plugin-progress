@@ -1,0 +1,16 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "local"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "local/activate": 1
+  }
+}

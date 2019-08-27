@@ -4,7 +4,8 @@
   "description": "Report progress when running ESLint. Useful for large projects!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"*.js\""
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,10 @@
   },
   "homepage": "https://github.com/gablau/eslint-plugin-progress#readme",
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-local": "^1.0.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "prettier": "^1.12.1"
+    "eslint": "^6.x.x",
+    "eslint-config-prettier": "^6.x.x",
+    "eslint-plugin-local": "^1.x.x",
+    "eslint-plugin-prettier": "^3.x.x",
+    "prettier": "^1.18.x"
   }
 }
